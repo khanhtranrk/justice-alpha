@@ -4,44 +4,41 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
-Chain	justice_chain/adapter/storage/sqlite/repository/chain.go	/^type Chain struct {$/;"	t
-Chain	justice_chain/core/domain/chain.go	/^type Chain struct {$/;"	t
+Chain	external/adapter/storage/sqlite/repository/chain.go	/^type Chain struct {$/;"	t
+Chain	external/core/domain/chain.go	/^type Chain struct {$/;"	t
+ChainRepository	external/adapter/storage/sqlite/repository/chain.go	/^type ChainRepository struct {$/;"	t
 ChainRepository	external/core/port/chain.go	/^type ChainRepository interface {$/;"	t
-ChainRepository	justice_chain/adapter/storage/sqlite/repository/chain.go	/^type ChainRepository struct {$/;"	t
-ChainRepository	justice_chain/core/port/chain.go	/^type ChainRepository interface {$/;"	t
 ChainService	external/core/port/chain.go	/^type ChainService interface {$/;"	t
-ChainService	justice_chain/core/port/chain.go	/^type ChainService interface {$/;"	t
-CreateChain	justice_chain/adapter/storage/sqlite/repository/chain.go	/^func (r *ChainRepository) CreateChain(chain *jc_domain.Chain) (*jc_domain.Chain, error) {$/;"	f
-DB	justice_chain/adapter/config/config.go	/^type DB struct {$/;"	t
+CreateChain	external/adapter/storage/sqlite/repository/chain.go	/^func (r *ChainRepository) CreateChain(chain *jc_domain.Chain) (*jc_domain.Chain, error) {$/;"	f
+DB	external/adapter/config/config.go	/^type DB struct {$/;"	t
 GenerateRelationshipKey	external/core/util/relationship_key.go	/^func GenerateRelationshipKey() string {$/;"	f
-GenerateRelationshipKey	relationship/core/domain/relationship.go	/^func GenerateRelationshipKey() string {$/;"	f
-GenerateSafeKey	justice_chain/core/util/safe_key.go	/^func GenerateSafeKey() string {$/;"	f
-New	justice_chain/adapter/config/config.go	/^func New() (*DB, error) {$/;"	f
-New	justice_chain/adapter/storage/sqlite/db.go	/^func New(config *config.DB) (*sql.DB, error) {$/;"	f
-NewChain	justice_chain/core/domain/chain.go	/^func NewChain(primarySafeKey string, secondarySafeKey string, payloadKey string, previousChainKey string, relationshipKey string) *Chain {$/;"	f
-NewChainRepository	justice_chain/adapter/storage/sqlite/repository/chain.go	/^func NewChainRepository(db *sql.DB) *ChainRepository {$/;"	f
-NewRelationship	external/core/domain/relationship.go	/^func NewRelationship(RelationshipKey string, ownerKey string, guestKey string, guestRequestQueue string, GuestResponseQueue string) *Relationship {$/;"	f
-NewRelationship	relationship/core/domain/relationship.go	/^func NewRelationship(RelationshipKey string, ownerKey string, guestKey string, guestRequestQueue string, GuestResponseQueue string) *Relationship {$/;"	f
+GenerateSafeKey	external/core/util/safe_key.go	/^func GenerateSafeKey() string {$/;"	f
+ListRelationships	external/adapter/storage/sqlite/repository/relationship.go	/^func (rr *RelationshipRepository) ListRelationships() ([]*domain.Relationship, error) {$/;"	f
+ListRelationships	external/core/service/relationship.go	/^func (rs *RelationshipService) ListRelationships() ([]*domain.Relationship, error) {$/;"	f
+New	external/adapter/config/config.go	/^func New() (*DB, error) {$/;"	f
+New	external/adapter/storage/sqlite/db.go	/^func New(config *config.DB) (*sql.DB, error) {$/;"	f
+NewChain	external/core/domain/chain.go	/^func NewChain(primarySafeKey string, secondarySafeKey string, payloadKey string, previousChainKey string, relationshipKey string) *Chain {$/;"	f
+NewChainRepository	external/adapter/storage/sqlite/repository/chain.go	/^func NewChainRepository(db *sql.DB) *ChainRepository {$/;"	f
+NewRelationship	external/core/domain/relationship.go	/^func NewRelationship($/;"	f
+NewRelationshipRepository	external/adapter/storage/sqlite/repository/relationship.go	/^func NewRelationshipRepository(db *sql.DB) *RelationshipRepository {$/;"	f
+NewRelationshipService	external/core/service/relationship.go	/^func NewRelationshipService(rr port.RelationshipRepository) *RelationshipService {$/;"	f
 Relationship	external/core/domain/relationship.go	/^type Relationship struct {$/;"	t
-Relationship	relationship/core/domain/relationship.go	/^type Relationship struct {$/;"	t
+RelationshipRepository	external/adapter/storage/sqlite/repository/relationship.go	/^type RelationshipRepository struct {$/;"	t
 RelationshipRepository	external/core/port/relationship.go	/^type RelationshipRepository interface {$/;"	t
 RelationshipService	external/core/port/relationship.go	/^type RelationshipService interface {$/;"	t
+RelationshipService	external/core/service/relationship.go	/^type RelationshipService struct {$/;"	t
 TestGenerateSafeKey	external/core/util/safe_key_test.go	/^func TestGenerateSafeKey(t *testing.T) {$/;"	f
-TestGenerateSafeKey	justice_chain/core/util/safe_key_test.go	/^func TestGenerateSafeKey(t *testing.T) {$/;"	f
-TestNewChain	justice_chain/core/domain/chain_test.go	/^func TestNewChain(t *testing.T) {$/;"	f
-config	justice_chain/adapter/config/config.go	/^package config$/;"	p
+config	external/adapter/config/config.go	/^package config$/;"	p
+domain	external/core/domain/chain.go	/^package domain$/;"	p
 domain	external/core/domain/relationship.go	/^package domain$/;"	p
-domain	justice_chain/core/domain/chain.go	/^package domain$/;"	p
-domain	justice_chain/core/domain/chain_test.go	/^package domain$/;"	p
-domain	relationship/core/domain/relationship.go	/^package domain$/;"	p
 main	main.go	/^func main() {$/;"	f
 main	main.go	/^package main$/;"	p
 port	external/core/port/chain.go	/^package port$/;"	p
 port	external/core/port/relationship.go	/^package port$/;"	p
-port	justice_chain/core/port/chain.go	/^package port$/;"	p
-repository	justice_chain/adapter/storage/sqlite/repository/chain.go	/^package repository$/;"	p
-sqlite	justice_chain/adapter/storage/sqlite/db.go	/^package sqlite$/;"	p
+repository	external/adapter/storage/sqlite/repository/chain.go	/^package repository$/;"	p
+repository	external/adapter/storage/sqlite/repository/relationship.go	/^package repository$/;"	p
+service	external/core/service/relationship.go	/^package service$/;"	p
+sqlite	external/adapter/storage/sqlite/db.go	/^package sqlite$/;"	p
 util	external/core/util/relationship_key.go	/^package util$/;"	p
+util	external/core/util/safe_key.go	/^package util$/;"	p
 util	external/core/util/safe_key_test.go	/^package util$/;"	p
-util	justice_chain/core/util/safe_key.go	/^package util$/;"	p
-util	justice_chain/core/util/safe_key_test.go	/^package util$/;"	p

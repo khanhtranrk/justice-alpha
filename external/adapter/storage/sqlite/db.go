@@ -3,8 +3,7 @@ package sqlite
 import (
 	"database/sql"
 
-	"github.com/khanhtranrk/justice-alpha/justice_chain/adapter/config"
-
+	"github.com/khanhtranrk/justice-alpha/external/adapter/config"
 	_ "github.com/mattn/go-sqlite3"
 )
 
