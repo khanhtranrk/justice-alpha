@@ -16,3 +16,7 @@ func NewRelationshipService(rr port.RelationshipRepository) *RelationshipService
 func (rs *RelationshipService) ListRelationships() ([]*domain.Relationship, error) {
   return rs.rr.ListRelationships()
 }
+
+func (rs *RelationshipService) GetRelationshipByGuestKey(guestKey string) (*domain.Relationship, error) {
+  return rs.rr.GetRelationshipByGuestKey(guestKey)
+}

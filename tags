@@ -6,7 +6,8 @@
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
 DB	external/adapter/config/config.go	/^type DB struct {$/;"	t
 GenerateRelationshipKey	external/core/util/relationship_key.go	/^func GenerateRelationshipKey() string {$/;"	f
-GenerateSafeKey	external/core/util/safe_key.go	/^func GenerateSafeKey() string {$/;"	f
+GetRelationshipByGuestKey	external/adapter/storage/sqlite/repository/relationship.go	/^func (rr *RelationshipRepository) GetRelationshipByGuestKey(guestKey string) (*domain.Relationship, error) {$/;"	f
+GetRelationshipByGuestKey	external/core/service/relationship.go	/^func (rs *RelationshipService) GetRelationshipByGuestKey(guestKey string) (*domain.Relationship, error) {$/;"	f
 IsTrust	external/core/service/request_message.go	/^func (rms *RequestMessageService) IsTrust(rm *domain.RequestMessage) (bool, error) {$/;"	f
 ListRelationships	external/adapter/storage/sqlite/repository/relationship.go	/^func (rr *RelationshipRepository) ListRelationships() ([]*domain.Relationship, error) {$/;"	f
 ListRelationships	external/core/service/relationship.go	/^func (rs *RelationshipService) ListRelationships() ([]*domain.Relationship, error) {$/;"	f
@@ -24,7 +25,6 @@ RequestMessage	external/core/domain/request_message.go	/^type RequestMessage str
 RequestMessageService	external/core/service/request_message.go	/^type RequestMessageService struct {$/;"	t
 ResponseMessage	external/core/domain/response_message.go	/^type ResponseMessage struct {$/;"	t
 ResponseMessageService	external/core/service/reponse_message.go	/^type ResponseMessageService struct {$/;"	t
-TestGenerateSafeKey	external/core/util/safe_key_test.go	/^func TestGenerateSafeKey(t *testing.T) {$/;"	f
 config	external/adapter/config/config.go	/^package config$/;"	p
 domain	external/core/domain/relationship.go	/^package domain$/;"	p
 domain	external/core/domain/request_message.go	/^package domain$/;"	p
@@ -48,5 +48,3 @@ service	external/core/service/reponse_message.go	/^package service$/;"	p
 service	external/core/service/request_message.go	/^package service$/;"	p
 sqlite	external/adapter/storage/sqlite/db.go	/^package sqlite$/;"	p
 util	external/core/util/relationship_key.go	/^package util$/;"	p
-util	external/core/util/safe_key.go	/^package util$/;"	p
-util	external/core/util/safe_key_test.go	/^package util$/;"	p
