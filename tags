@@ -8,7 +8,7 @@ DB	external/adapter/config/config.go	/^type DB struct {$/;"	t
 GenerateRelationshipKey	external/core/util/relationship_key.go	/^func GenerateRelationshipKey() string {$/;"	f
 GetRelationshipByGuestKey	external/adapter/storage/sqlite/repository/relationship.go	/^func (rr *RelationshipRepository) GetRelationshipByGuestKey(guestKey string) (*domain.Relationship, error) {$/;"	f
 GetRelationshipByGuestKey	external/core/service/relationship.go	/^func (rs *RelationshipService) GetRelationshipByGuestKey(guestKey string) (*domain.Relationship, error) {$/;"	f
-IsTrust	external/core/service/request_message.go	/^func (rms *RequestMessageService) IsTrust(rm *domain.RequestMessage) (bool, error) {$/;"	f
+IsTrustGuest	external/core/service/relationship.go	/^func (rs *RelationshipService) IsTrustGuest(guestKey string, safeKey string) (bool, error) {$/;"	f
 ListRelationships	external/adapter/storage/sqlite/repository/relationship.go	/^func (rr *RelationshipRepository) ListRelationships() ([]*domain.Relationship, error) {$/;"	f
 ListRelationships	external/core/service/relationship.go	/^func (rs *RelationshipService) ListRelationships() ([]*domain.Relationship, error) {$/;"	f
 New	external/adapter/config/config.go	/^func New() (*DB, error) {$/;"	f
@@ -21,30 +21,25 @@ RelationshipRepository	external/adapter/storage/sqlite/repository/relationship.g
 RelationshipRepository	external/core/port/relationship.go	/^type RelationshipRepository interface {$/;"	t
 RelationshipService	external/core/port/relationship.go	/^type RelationshipService interface {$/;"	t
 RelationshipService	external/core/service/relationship.go	/^type RelationshipService struct {$/;"	t
-RequestMessage	external/core/domain/request_message.go	/^type RequestMessage struct {$/;"	t
-RequestMessageService	external/core/service/request_message.go	/^type RequestMessageService struct {$/;"	t
-ResponseMessage	external/core/domain/response_message.go	/^type ResponseMessage struct {$/;"	t
-ResponseMessageService	external/core/service/reponse_message.go	/^type ResponseMessageService struct {$/;"	t
+TestGetRelationshipByGuestKey	external/core/service/relationship_test.go	/^func TestGetRelationshipByGuestKey(t *testing.T) {$/;"	f
+TestIsTrustGuest	external/core/service/relationship_test.go	/^func TestIsTrustGuest(t *testing.T) {$/;"	f
+TestListRelationships	external/core/service/relationship_test.go	/^func TestListRelationships(t *testing.T) {$/;"	f
+TestUpdateSafeKeyForGuest	external/core/service/relationship_test.go	/^func TestUpdateSafeKeyForGuest(t *testing.T) {$/;"	f
+UpdateRelationship	external/adapter/storage/sqlite/repository/relationship.go	/^func (rr *RelationshipRepository) UpdateRelationship(rl *domain.Relationship) (*domain.Relationship, error) {$/;"	f
+UpdateSafeKeyForGuest	external/core/service/relationship.go	/^func (rs *RelationshipService) UpdateSafeKeyForGuest(guestKey string, safeKey string) error {$/;"	f
 config	external/adapter/config/config.go	/^package config$/;"	p
 domain	external/core/domain/relationship.go	/^package domain$/;"	p
-domain	external/core/domain/request_message.go	/^package domain$/;"	p
-domain	external/core/domain/response_message.go	/^package domain$/;"	p
-guestKey.ownerKey	external/adapter/storage/sqlite/migrations/000001_create_relationship_table.up.sql	/^CREATE UNIQUE INDEX "ownerKey" ON "guestKey" ("email");$/;"	i
 main	main.go	/^func main() {$/;"	f
 main	main.go	/^package main$/;"	p
 port	external/core/port/relationship.go	/^package port$/;"	p
 relationships	external/adapter/storage/sqlite/migrations/000001_create_relationship_table.up.sql	/^CREATE TABLE "relationships" ($/;"	t
-relationships.created_at	external/adapter/storage/sqlite/migrations/000001_create_relationship_table.up.sql	/^    "created_at" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,$/;"	F
+relationships.gate	external/adapter/storage/sqlite/migrations/000001_create_relationship_table.up.sql	/^    "gate" VARCHAR(255) NOT NULL$/;"	F
 relationships.guest_key	external/adapter/storage/sqlite/migrations/000001_create_relationship_table.up.sql	/^    "guest_key" VARCHAR(32) NOT NULL,$/;"	F
-relationships.guest_request_queue	external/adapter/storage/sqlite/migrations/000001_create_relationship_table.up.sql	/^    "guest_request_queue" VARCHAR(255) NOT NULL,$/;"	F
-relationships.id	external/adapter/storage/sqlite/migrations/000001_create_relationship_table.up.sql	/^    "id" BIGINT PRIMARY KEY AUTOINCREMENT,$/;"	F
 relationships.owner_key	external/adapter/storage/sqlite/migrations/000001_create_relationship_table.up.sql	/^    "owner_key" VARCHAR(32) NOT NULL,$/;"	F
-relationships.refresh_key_queue	external/adapter/storage/sqlite/migrations/000001_create_relationship_table.up.sql	/^    "refresh_key_queue" VARCHAR(255) NOT NULL,$/;"	F
-relationships.request_response_queue	external/adapter/storage/sqlite/migrations/000001_create_relationship_table.up.sql	/^    "request_response_queue" VARCHAR(255) NOT NULL,$/;"	F
-relationships.updated_at	external/adapter/storage/sqlite/migrations/000001_create_relationship_table.up.sql	/^    "updated_at" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP$/;"	F
+relationships.relationships_index_on_owner_key	external/adapter/storage/sqlite/migrations/000001_create_relationship_table.up.sql	/^CREATE UNIQUE INDEX "relationships_index_on_owner_key" ON "relationships" ("owner_key");$/;"	i
+relationships.safe_key	external/adapter/storage/sqlite/migrations/000001_create_relationship_table.up.sql	/^    "safe_key" VARCHAR(32) NOT NULL,$/;"	F
 repository	external/adapter/storage/sqlite/repository/relationship.go	/^package repository$/;"	p
 service	external/core/service/relationship.go	/^package service$/;"	p
-service	external/core/service/reponse_message.go	/^package service$/;"	p
-service	external/core/service/request_message.go	/^package service$/;"	p
+service	external/core/service/relationship_test.go	/^package service$/;"	p
 sqlite	external/adapter/storage/sqlite/db.go	/^package sqlite$/;"	p
 util	external/core/util/relationship_key.go	/^package util$/;"	p

@@ -15,47 +15,38 @@ func NewRelationshipRepository(db *sql.DB) *RelationshipRepository {
 }
 
 func (rr *RelationshipRepository) GetRelationshipByGuestKey(guestKey string) (*domain.Relationship, error) {
-  query := `SELECT relationship_key, owner_key, guest_key,
-                   guest_request_queue, guest_response_queue,
-                   request_key, response_key, created_at, updated_at
+  query := `SELECT owner_key, guest_key, safe_key, gate
             FROM relationships
             WHERE owner_key = ?`
 
-  rows, err := rr.db.Query(query)
+  rows, err := rr.db.Query(query, guestKey)
 
   if err != nil {
     return nil, err
   }
 
-  var relationship *domain.Relationship
+  var relationship domain.Relationship
 
   if rows.Next() {
     err := rows.Scan(
-      relationship.RelationshipKey,
-      relationship.OwnerKey,
-      relationship.GuestKey,
-      relationship.GuestRequestQueue,
-      relationship.GuestResponseQueue,
-      relationship.RequestKey,
-      relationship.ResponseKey,
-      relationship.CreatedAt,
-      relationship.UpdatedAt,
+      &relationship.OwnerKey,
+      &relationship.GuestKey,
+      &relationship.SafeKey,
+      &relationship.Gate,
     )
 
     if err != nil {
       return nil, err
     }
 
-    return relationship, nil
+    return &relationship, nil
   }
 
   return nil, nil
 }
 
 func (rr *RelationshipRepository) ListRelationships() ([]*domain.Relationship, error) {
-  query := `SELECT relationship_key, owner_key, guest_key,
-                   guest_request_queue, guest_response_queue,
-                   request_key, response_key, created_at, updated_at
+  query := `SELECT owner_key, guest_key, safe_key, gate
             FROM relationships`
 
   rows, err := rr.db.Query(query)
@@ -66,27 +57,32 @@ func (rr *RelationshipRepository) ListRelationships() ([]*domain.Relationship, e
 
   var relationships []*domain.Relationship
   for rows.Next() {
-    var relationship *domain.Relationship
+    var relationship domain.Relationship
 
     err := rows.Scan(
-      relationship.RelationshipKey,
-      relationship.OwnerKey,
-      relationship.GuestKey,
-      relationship.GuestRequestQueue,
-      relationship.GuestResponseQueue,
-      relationship.RequestKey,
-      relationship.ResponseKey,
-      relationship.CreatedAt,
-      relationship.UpdatedAt,
+      &relationship.OwnerKey,
+      &relationship.GuestKey,
+      &relationship.SafeKey,
+      &relationship.Gate,
     )
 
     if err != nil {
       return nil, err
     }
 
-    relationships = append(relationships, relationship)
+    relationships = append(relationships, &relationship)
   }
 
   return relationships, nil
 }
 
+func (rr *RelationshipRepository) UpdateRelationship(rl *domain.Relationship) (*domain.Relationship, error) {
+  exec := `UPDATE relationships SET safe_key = ? WHERE guest_key = ?`
+  _, err := rr.db.Exec(exec, rl.SafeKey, rl.GuestKey)
+
+  if err != nil {
+    return nil, err
+  }
+
+  return rl, nil
+}
