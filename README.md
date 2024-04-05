@@ -1,41 +1,26 @@
 # justice-alpha
 justice alpha
 
+  Id uint64
+  Type uint8
+  SenderId uint64
+  ReceiverId uint64
+  SafeKey uint64
+  CommitPoint uint64
+  Content []byte
+
 ```
-Mail --------> Justice
- |
- |
- |
-Ma
+&Message{id, type, sender_id, receiver_id, safe_key, commit_point, content}
+&Message{id, type, sender_id, receiver_id, safe_key, commit_point, content}
 ```
 
-{"a": 1, "b": 1, "c": 1} div 2
+```
+message {
+    senderId
+    receiverId
+}
 
-pice 1 (id) -------------- pice 2 (id)
+Error
 
-ma ---(Pice 1, JusticePiceAccessKey)--> justice
-
-relationships
-- primary_key
-- secondary_key
-- request_queue
-- response_queue
-
-justice_queue
-
-justice_chains
-- primary_safe_key
-- secondary_safe_key
-- payload_key
-- chain_key
-- relationship_seondary_key
-
-justice_pices
-- id
-- pice
-- relationship_seondary_key
-
-Pice Allowed
-- id
-- allow_key
-- relationship_seondary_key
+Sender ----> Taistra Gate ----> Taistra ---->  Receiver Gate ----> Receiver
+```

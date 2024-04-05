@@ -4,15 +4,49 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+BuildMessage	external/justice/message/message_builder.go	/^func BuildMessage(typ uint8, receiverId uint64, senderId uint64, safeKey uint64, content []byte) ([]byte, error) {$/;"	f
+BuildMessage	external/justice/message_builder.go	/^func BuildMessage(typ uint8, receiverId uint64, senderId uint64, safeKey uint64, content []byte) ([]byte, error) {$/;"	f
+Citizen	external/justice/citizen.go	/^type Citizen struct {$/;"	t
+Citizen	external/justice/citizen/citizen.go	/^type Citizen struct {$/;"	t
+Citizen	external/justice/core/domain/citizen.go	/^type Citizen struct {$/;"	t
+Citizen	external/justice/domain/citizen.go	/^type Citizen struct {$/;"	t
+Citizen	external/justice/relationship.go	/^type Citizen struct {$/;"	t
+CitizenRepository	external/justice/citizen/citizen_repository.go	/^type CitizenRepository struct {$/;"	t
+CitizenService	external/justice/citizen/citizen_service.go	/^type CitizenService struct {$/;"	t
+Contact	external/justice/citizen/contact/contact.go	/^type Contact struct {$/;"	t
+Contact	external/justice/contact.go	/^type Contact struct {$/;"	t
+Contact	external/justice/contact/contact.go	/^type Contact struct {$/;"	t
+Contact	external/justice/domain/contact.go	/^type Contact struct {$/;"	t
+ContactRepository	external/justice/contact/contact_repository.go	/^type ContactRepository struct {$/;"	t
+ContactService	external/justice/contact/contact_service.go	/^type ContactService struct {$/;"	t
 DB	external/adapter/config/config.go	/^type DB struct {$/;"	t
+FromBytes	external/justice/message/message.go	/^func (m *Message) FromBytes(msg []byte) (*Message, error) {$/;"	f
 GenerateRelationshipKey	external/core/util/relationship_key.go	/^func GenerateRelationshipKey() string {$/;"	f
+GetCitizenById	external/justice/citizen/citizen_repository.go	/^func (cr *CitizenRepository) GetCitizenById(id uint64) (*Citizen, error) {$/;"	f
+GetCitizenById	external/justice/citizen/citizen_service.go	/^func (cs *CitizenService) GetCitizenById(id uint64) (*Citizen, error) {$/;"	f
+GetContactByCitizenId	external/justice/contact/contact_repository.go	/^func (cr *ContactRepository) GetContactByCitizenId(id uint64) (*Contact, error) {$/;"	f
+GetContactByCitizenId	external/justice/contact/contact_service.go	/^func (cs *ContactService) GetContactByCitizenId(citizenid uint64) (*Contact, error) {$/;"	f
 GetRelationshipByGuestKey	external/adapter/storage/sqlite/repository/relationship.go	/^func (rr *RelationshipRepository) GetRelationshipByGuestKey(guestKey string) (*domain.Relationship, error) {$/;"	f
 GetRelationshipByGuestKey	external/core/service/relationship.go	/^func (rs *RelationshipService) GetRelationshipByGuestKey(guestKey string) (*domain.Relationship, error) {$/;"	f
+ICitizenRepository	external/justice/citizen/citizen_port.go	/^type ICitizenRepository interface {$/;"	t
+ICitizenService	external/justice/citizen/citizen_port.go	/^type ICitizenService interface {$/;"	t
+IContactRepository	external/justice/contact/contact_port.go	/^type IContactRepository interface {$/;"	t
+IContactService	external/justice/contact/contact_port.go	/^type IContactService interface {$/;"	t
 IsTrustGuest	external/core/service/relationship.go	/^func (rs *RelationshipService) IsTrustGuest(guestKey string, safeKey string) (bool, error) {$/;"	f
+Key	external/justice/key.go	/^type Key struct {$/;"	t
+ListAll	external/justice/citizen/citizen_repository.go	/^func (cr *CitizenRepository) ListAll() ([]*Citizen, error) {$/;"	f
+ListAll	external/justice/citizen/citizen_service.go	/^func (cs *CitizenService) ListAll() ([]*Citizen, error) {$/;"	f
+ListAll	external/justice/contact/contact_repository.go	/^func (cr *ContactRepository) ListAll() ([]*Contact, error) {$/;"	f
+ListAll	external/justice/contact/contact_service.go	/^func (cs *ContactService) ListAll() ([]*Contact, error) {$/;"	f
 ListRelationships	external/adapter/storage/sqlite/repository/relationship.go	/^func (rr *RelationshipRepository) ListRelationships() ([]*domain.Relationship, error) {$/;"	f
 ListRelationships	external/core/service/relationship.go	/^func (rs *RelationshipService) ListRelationships() ([]*domain.Relationship, error) {$/;"	f
+Message	external/justice/message/message.go	/^type Message struct {$/;"	t
 New	external/adapter/config/config.go	/^func New() (*DB, error) {$/;"	f
 New	external/adapter/storage/sqlite/db.go	/^func New(config *config.DB) (*sql.DB, error) {$/;"	f
+NewCitizenRepository	external/justice/citizen/citizen_repository.go	/^func NewCitizenRepository(db *sql.DB) *CitizenRepository {$/;"	f
+NewCitizenService	external/justice/citizen/citizen_service.go	/^func NewCitizenService(rp ICitizenRepository) *CitizenService {$/;"	f
+NewContactRepository	external/justice/contact/contact_repository.go	/^func NewContactRepository(db *sql.DB) *ContactRepository {$/;"	f
+NewContactService	external/justice/contact/contact_service.go	/^func NewContactService(rp IContactRepository) *ContactService {$/;"	f
 NewRelationship	external/core/domain/relationship.go	/^func NewRelationship($/;"	f
 NewRelationshipRepository	external/adapter/storage/sqlite/repository/relationship.go	/^func NewRelationshipRepository(db *sql.DB) *RelationshipRepository {$/;"	f
 NewRelationshipService	external/core/service/relationship.go	/^func NewRelationshipService(rr port.RelationshipRepository) *RelationshipService {$/;"	f
@@ -25,12 +59,29 @@ TestGetRelationshipByGuestKey	external/core/service/relationship_test.go	/^func 
 TestIsTrustGuest	external/core/service/relationship_test.go	/^func TestIsTrustGuest(t *testing.T) {$/;"	f
 TestListRelationships	external/core/service/relationship_test.go	/^func TestListRelationships(t *testing.T) {$/;"	f
 TestUpdateSafeKeyForGuest	external/core/service/relationship_test.go	/^func TestUpdateSafeKeyForGuest(t *testing.T) {$/;"	f
+ToBytes	external/justice/message/message.go	/^func (m *Message) ToBytes() ([]byte, error) {$/;"	f
 UpdateRelationship	external/adapter/storage/sqlite/repository/relationship.go	/^func (rr *RelationshipRepository) UpdateRelationship(rl *domain.Relationship) (*domain.Relationship, error) {$/;"	f
 UpdateSafeKeyForGuest	external/core/service/relationship.go	/^func (rs *RelationshipService) UpdateSafeKeyForGuest(guestKey string, safeKey string) error {$/;"	f
 config	external/adapter/config/config.go	/^package config$/;"	p
 domain	external/core/domain/relationship.go	/^package domain$/;"	p
-main	main.go	/^func main() {$/;"	f
-main	main.go	/^package main$/;"	p
+justice	external/justice/citizen.go	/^package justice$/;"	p
+justice	external/justice/citizen/citizen.go	/^package justice$/;"	p
+justice	external/justice/citizen/citizen_port.go	/^package justice$/;"	p
+justice	external/justice/citizen/citizen_repository.go	/^package justice$/;"	p
+justice	external/justice/citizen/citizen_service.go	/^package justice$/;"	p
+justice	external/justice/citizen/contact/contact.go	/^package justice$/;"	p
+justice	external/justice/contact.go	/^package justice$/;"	p
+justice	external/justice/contact/contact.go	/^package justice$/;"	p
+justice	external/justice/contact/contact_port.go	/^package justice$/;"	p
+justice	external/justice/contact/contact_repository.go	/^package justice$/;"	p
+justice	external/justice/contact/contact_service.go	/^package justice$/;"	p
+justice	external/justice/core/domain/citizen.go	/^package justice$/;"	p
+justice	external/justice/domain/citizen.go	/^package justice$/;"	p
+justice	external/justice/domain/contact.go	/^package justice$/;"	p
+justice	external/justice/message/message.go	/^package justice$/;"	p
+justice	external/justice/message/message_builder.go	/^package justice$/;"	p
+justice	external/justice/message_builder.go	/^package justice$/;"	p
+justice	external/justice/relationship.go	/^package justice$/;"	p
 port	external/core/port/relationship.go	/^package port$/;"	p
 relationships	external/adapter/storage/sqlite/migrations/000001_create_relationship_table.up.sql	/^CREATE TABLE "relationships" ($/;"	t
 relationships.gate	external/adapter/storage/sqlite/migrations/000001_create_relationship_table.up.sql	/^    "gate" VARCHAR(255) NOT NULL$/;"	F
