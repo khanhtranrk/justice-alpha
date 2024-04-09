@@ -4,23 +4,17 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
-BuildMessage	external/justice/message/message_builder.go	/^func BuildMessage(typ uint8, receiverId uint64, senderId uint64, safeKey uint64, content []byte) ([]byte, error) {$/;"	f
-BuildMessage	external/justice/message_builder.go	/^func BuildMessage(typ uint8, receiverId uint64, senderId uint64, safeKey uint64, content []byte) ([]byte, error) {$/;"	f
+Citizen	external/core/domain/citizen.go	/^type Citizen struct {$/;"	t
 Citizen	external/justice/citizen.go	/^type Citizen struct {$/;"	t
-Citizen	external/justice/citizen/citizen.go	/^type Citizen struct {$/;"	t
-Citizen	external/justice/core/domain/citizen.go	/^type Citizen struct {$/;"	t
-Citizen	external/justice/domain/citizen.go	/^type Citizen struct {$/;"	t
-Citizen	external/justice/relationship.go	/^type Citizen struct {$/;"	t
+CitizenRepository	external/core/port/citizen.go	/^type CitizenRepository interface {$/;"	t
 CitizenRepository	external/justice/citizen/citizen_repository.go	/^type CitizenRepository struct {$/;"	t
 CitizenService	external/justice/citizen/citizen_service.go	/^type CitizenService struct {$/;"	t
-Contact	external/justice/citizen/contact/contact.go	/^type Contact struct {$/;"	t
-Contact	external/justice/contact.go	/^type Contact struct {$/;"	t
-Contact	external/justice/contact/contact.go	/^type Contact struct {$/;"	t
-Contact	external/justice/domain/contact.go	/^type Contact struct {$/;"	t
+Contact	external/core/domain/contact.go	/^type Contact struct {$/;"	t
+ContactRepository	external/core/port/contact.go	/^type ContactRepository interface {$/;"	t
 ContactRepository	external/justice/contact/contact_repository.go	/^type ContactRepository struct {$/;"	t
+ContactService	external/core/port/contact.go	/^type ContactService interface {$/;"	t
 ContactService	external/justice/contact/contact_service.go	/^type ContactService struct {$/;"	t
 DB	external/adapter/config/config.go	/^type DB struct {$/;"	t
-FromBytes	external/justice/message/message.go	/^func (m *Message) FromBytes(msg []byte) (*Message, error) {$/;"	f
 GenerateRelationshipKey	external/core/util/relationship_key.go	/^func GenerateRelationshipKey() string {$/;"	f
 GetCitizenById	external/justice/citizen/citizen_repository.go	/^func (cr *CitizenRepository) GetCitizenById(id uint64) (*Citizen, error) {$/;"	f
 GetCitizenById	external/justice/citizen/citizen_service.go	/^func (cs *CitizenService) GetCitizenById(id uint64) (*Citizen, error) {$/;"	f
@@ -33,63 +27,76 @@ ICitizenService	external/justice/citizen/citizen_port.go	/^type ICitizenService 
 IContactRepository	external/justice/contact/contact_port.go	/^type IContactRepository interface {$/;"	t
 IContactService	external/justice/contact/contact_port.go	/^type IContactService interface {$/;"	t
 IsTrustGuest	external/core/service/relationship.go	/^func (rs *RelationshipService) IsTrustGuest(guestKey string, safeKey string) (bool, error) {$/;"	f
-Key	external/justice/key.go	/^type Key struct {$/;"	t
 ListAll	external/justice/citizen/citizen_repository.go	/^func (cr *CitizenRepository) ListAll() ([]*Citizen, error) {$/;"	f
 ListAll	external/justice/citizen/citizen_service.go	/^func (cs *CitizenService) ListAll() ([]*Citizen, error) {$/;"	f
 ListAll	external/justice/contact/contact_repository.go	/^func (cr *ContactRepository) ListAll() ([]*Contact, error) {$/;"	f
 ListAll	external/justice/contact/contact_service.go	/^func (cs *ContactService) ListAll() ([]*Contact, error) {$/;"	f
 ListRelationships	external/adapter/storage/sqlite/repository/relationship.go	/^func (rr *RelationshipRepository) ListRelationships() ([]*domain.Relationship, error) {$/;"	f
 ListRelationships	external/core/service/relationship.go	/^func (rs *RelationshipService) ListRelationships() ([]*domain.Relationship, error) {$/;"	f
-Message	external/justice/message/message.go	/^type Message struct {$/;"	t
+Message	external/core/domain/message.go	/^type Message struct {$/;"	t
+MessageRepository	external/core/port/message.go	/^type MessageRepository interface {$/;"	t
+MessageService	external/core/port/message.go	/^type MessageService interface {$/;"	t
 New	external/adapter/config/config.go	/^func New() (*DB, error) {$/;"	f
 New	external/adapter/storage/sqlite/db.go	/^func New(config *config.DB) (*sql.DB, error) {$/;"	f
 NewCitizenRepository	external/justice/citizen/citizen_repository.go	/^func NewCitizenRepository(db *sql.DB) *CitizenRepository {$/;"	f
 NewCitizenService	external/justice/citizen/citizen_service.go	/^func NewCitizenService(rp ICitizenRepository) *CitizenService {$/;"	f
 NewContactRepository	external/justice/contact/contact_repository.go	/^func NewContactRepository(db *sql.DB) *ContactRepository {$/;"	f
 NewContactService	external/justice/contact/contact_service.go	/^func NewContactService(rp IContactRepository) *ContactService {$/;"	f
-NewRelationship	external/core/domain/relationship.go	/^func NewRelationship($/;"	f
 NewRelationshipRepository	external/adapter/storage/sqlite/repository/relationship.go	/^func NewRelationshipRepository(db *sql.DB) *RelationshipRepository {$/;"	f
 NewRelationshipService	external/core/service/relationship.go	/^func NewRelationshipService(rr port.RelationshipRepository) *RelationshipService {$/;"	f
-Relationship	external/core/domain/relationship.go	/^type Relationship struct {$/;"	t
 RelationshipRepository	external/adapter/storage/sqlite/repository/relationship.go	/^type RelationshipRepository struct {$/;"	t
-RelationshipRepository	external/core/port/relationship.go	/^type RelationshipRepository interface {$/;"	t
-RelationshipService	external/core/port/relationship.go	/^type RelationshipService interface {$/;"	t
 RelationshipService	external/core/service/relationship.go	/^type RelationshipService struct {$/;"	t
 TestGetRelationshipByGuestKey	external/core/service/relationship_test.go	/^func TestGetRelationshipByGuestKey(t *testing.T) {$/;"	f
 TestIsTrustGuest	external/core/service/relationship_test.go	/^func TestIsTrustGuest(t *testing.T) {$/;"	f
 TestListRelationships	external/core/service/relationship_test.go	/^func TestListRelationships(t *testing.T) {$/;"	f
 TestUpdateSafeKeyForGuest	external/core/service/relationship_test.go	/^func TestUpdateSafeKeyForGuest(t *testing.T) {$/;"	f
-ToBytes	external/justice/message/message.go	/^func (m *Message) ToBytes() ([]byte, error) {$/;"	f
 UpdateRelationship	external/adapter/storage/sqlite/repository/relationship.go	/^func (rr *RelationshipRepository) UpdateRelationship(rl *domain.Relationship) (*domain.Relationship, error) {$/;"	f
 UpdateSafeKeyForGuest	external/core/service/relationship.go	/^func (rs *RelationshipService) UpdateSafeKeyForGuest(guestKey string, safeKey string) error {$/;"	f
+citizens	external/adapter/storage/sqlite/migrations/000001_create_citizens_table.up.sql	/^CREATE TABLE "citizens" ($/;"	t
+citizens.citizens_index_on_id	external/adapter/storage/sqlite/migrations/000001_create_citizens_table.up.sql	/^CREATE UNIQUE INDEX citizens_index_on_id ON citizens (id);$/;"	i
+citizens.contact_gate	external/adapter/storage/sqlite/migrations/000001_create_citizens_table.up.sql	/^  contact_gate VARCHAR(255) NOT NULL$/;"	F
+citizens.id	external/adapter/storage/sqlite/migrations/000001_create_citizens_table.up.sql	/^  id INTEGER PRIMARY KEY AUTOINCREMENT,$/;"	F
 config	external/adapter/config/config.go	/^package config$/;"	p
-domain	external/core/domain/relationship.go	/^package domain$/;"	p
+contacts	external/adapter/storage/sqlite/migrations/000002_create_contact_table.up.sql	/^CREATE TABLE contacts ($/;"	t
+contacts.contacts_index_on_id	external/adapter/storage/sqlite/migrations/000002_create_contact_table.up.sql	/^CREATE UNIQUE INDEX contacts_index_on_id ON contacts (id);$/;"	i
+contacts.id	external/adapter/storage/sqlite/migrations/000002_create_contact_table.up.sql	/^  id INTEGER PRIMARY KEY AUTOINCREMENT,$/;"	F
+contacts.permission	external/adapter/storage/sqlite/migrations/000002_create_contact_table.up.sql	/^  permission INTEGER NOT NULL$/;"	F
+domain	external/core/domain/contact.go	/^package domain$/;"	p
+domain	external/core/domain/message.go	/^package domain$/;"	p
+justice	external/core/domain/citizen.go	/^package justice$/;"	p
 justice	external/justice/citizen.go	/^package justice$/;"	p
-justice	external/justice/citizen/citizen.go	/^package justice$/;"	p
 justice	external/justice/citizen/citizen_port.go	/^package justice$/;"	p
 justice	external/justice/citizen/citizen_repository.go	/^package justice$/;"	p
 justice	external/justice/citizen/citizen_service.go	/^package justice$/;"	p
-justice	external/justice/citizen/contact/contact.go	/^package justice$/;"	p
-justice	external/justice/contact.go	/^package justice$/;"	p
-justice	external/justice/contact/contact.go	/^package justice$/;"	p
 justice	external/justice/contact/contact_port.go	/^package justice$/;"	p
 justice	external/justice/contact/contact_repository.go	/^package justice$/;"	p
 justice	external/justice/contact/contact_service.go	/^package justice$/;"	p
-justice	external/justice/core/domain/citizen.go	/^package justice$/;"	p
-justice	external/justice/domain/citizen.go	/^package justice$/;"	p
-justice	external/justice/domain/contact.go	/^package justice$/;"	p
-justice	external/justice/message/message.go	/^package justice$/;"	p
-justice	external/justice/message/message_builder.go	/^package justice$/;"	p
-justice	external/justice/message_builder.go	/^package justice$/;"	p
-justice	external/justice/relationship.go	/^package justice$/;"	p
-port	external/core/port/relationship.go	/^package port$/;"	p
-relationships	external/adapter/storage/sqlite/migrations/000001_create_relationship_table.up.sql	/^CREATE TABLE "relationships" ($/;"	t
-relationships.gate	external/adapter/storage/sqlite/migrations/000001_create_relationship_table.up.sql	/^    "gate" VARCHAR(255) NOT NULL$/;"	F
-relationships.guest_key	external/adapter/storage/sqlite/migrations/000001_create_relationship_table.up.sql	/^    "guest_key" VARCHAR(32) NOT NULL,$/;"	F
-relationships.owner_key	external/adapter/storage/sqlite/migrations/000001_create_relationship_table.up.sql	/^    "owner_key" VARCHAR(32) NOT NULL,$/;"	F
-relationships.relationships_index_on_owner_key	external/adapter/storage/sqlite/migrations/000001_create_relationship_table.up.sql	/^CREATE UNIQUE INDEX "relationships_index_on_owner_key" ON "relationships" ("owner_key");$/;"	i
-relationships.safe_key	external/adapter/storage/sqlite/migrations/000001_create_relationship_table.up.sql	/^    "safe_key" VARCHAR(32) NOT NULL,$/;"	F
+port	external/core/port/citizen.go	/^package port$/;"	p
+port	external/core/port/contact.go	/^package port$/;"	p
+port	external/core/port/message.go	/^package port$/;"	p
+received_messages	external/adapter/storage/sqlite/migrations/000004_create_received_messages_table.up.sql	/^CREATE TABLE received_messages ($/;"	t
+received_messages.code	external/adapter/storage/sqlite/migrations/000004_create_received_messages_table.up.sql	/^  code INTEGER NOT NULL,$/;"	F
+received_messages.commit_at	external/adapter/storage/sqlite/migrations/000004_create_received_messages_table.up.sql	/^  commit_at INTEGER NOT NULL,$/;"	F
+received_messages.content	external/adapter/storage/sqlite/migrations/000004_create_received_messages_table.up.sql	/^  content BLOB NOT NULL,$/;"	F
+received_messages.id	external/adapter/storage/sqlite/migrations/000004_create_received_messages_table.up.sql	/^  id INTEGER PRIMARY KEY AUTOINCREMENT,$/;"	F
+received_messages.owner_id	external/adapter/storage/sqlite/migrations/000004_create_received_messages_table.up.sql	/^  owner_id INTEGER NOT NULL,$/;"	F
+received_messages.received_messages_index_on_code_owner_id_commit_at	external/adapter/storage/sqlite/migrations/000004_create_received_messages_table.up.sql	/^CREATE UNIQUE INDEX received_messages_index_on_code_owner_id_commit_at ON received_messages (code, owner_id, commit_at);$/;"	i
+received_messages.received_messages_index_on_id	external/adapter/storage/sqlite/migrations/000004_create_received_messages_table.up.sql	/^CREATE UNIQUE INDEX received_messages_index_on_id ON received_messages (id);$/;"	i
+received_messages.status	external/adapter/storage/sqlite/migrations/000004_create_received_messages_table.up.sql	/^  status INTEGER NOT NULL$/;"	F
+refer_messages	external/adapter/storage/sqlite/migrations/000005_create_refer_messages_table.up.sql	/^CREATE TABLE refer_messages ($/;"	t
+refer_messages.received_message_id	external/adapter/storage/sqlite/migrations/000005_create_refer_messages_table.up.sql	/^  received_message_id INTEGER NOT NULL,$/;"	F
+refer_messages.refer_messages_index_on_send_message_id_received_message_id	external/adapter/storage/sqlite/migrations/000005_create_refer_messages_table.up.sql	/^CREATE UNIQUE INDEX refer_messages_index_on_send_message_id_received_message_id ON refer_messages (sent_message_id, received_message_id);$/;"	i
+refer_messages.sent_message_id	external/adapter/storage/sqlite/migrations/000005_create_refer_messages_table.up.sql	/^  sent_message_id INTEGER NOT NULL,$/;"	F
 repository	external/adapter/storage/sqlite/repository/relationship.go	/^package repository$/;"	p
+sent_messages	external/adapter/storage/sqlite/migrations/000003_create_sent_messages_table.up.sql	/^CREATE TABLE "sent_messages" ($/;"	t
+sent_messages.code	external/adapter/storage/sqlite/migrations/000003_create_sent_messages_table.up.sql	/^  code INTEGER NOT NULL,$/;"	F
+sent_messages.commit_at	external/adapter/storage/sqlite/migrations/000003_create_sent_messages_table.up.sql	/^  commit_at INTEGER NOT NULL,$/;"	F
+sent_messages.content	external/adapter/storage/sqlite/migrations/000003_create_sent_messages_table.up.sql	/^  content BLOB NOT NULL,$/;"	F
+sent_messages.id	external/adapter/storage/sqlite/migrations/000003_create_sent_messages_table.up.sql	/^  id INTEGER PRIMARY KEY AUTOINCREMENT,$/;"	F
+sent_messages.owner_id	external/adapter/storage/sqlite/migrations/000003_create_sent_messages_table.up.sql	/^  owner_id INTEGER NOT NULL,$/;"	F
+sent_messages.sent_messages_index_on_code_owner_id_commit_at	external/adapter/storage/sqlite/migrations/000003_create_sent_messages_table.up.sql	/^CREATE UNIQUE INDEX sent_messages_index_on_code_owner_id_commit_at ON sent_messages (code, owner_id, commit_at);$/;"	i
+sent_messages.sent_messages_index_on_id	external/adapter/storage/sqlite/migrations/000003_create_sent_messages_table.up.sql	/^CREATE UNIQUE INDEX sent_messages_index_on_id ON sent_messages (id);$/;"	i
+sent_messages.status	external/adapter/storage/sqlite/migrations/000003_create_sent_messages_table.up.sql	/^  status INTEGER NOT NULL,$/;"	F
 service	external/core/service/relationship.go	/^package service$/;"	p
 service	external/core/service/relationship_test.go	/^package service$/;"	p
 sqlite	external/adapter/storage/sqlite/db.go	/^package sqlite$/;"	p
