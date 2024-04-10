@@ -1,26 +1,71 @@
 # justice-alpha
-justice alpha
 
+## Data structure
+
+### Citizen
+
+All citizens of the network.
+
+Struct:
+
+```
   Id uint64
-  Type uint8
-  SenderId uint64
-  ReceiverId uint64
-  SafeKey uint64
-  CommitPoint uint64
-  Content []byte
-
-```
-&Message{id, type, sender_id, receiver_id, safe_key, commit_point, content}
-&Message{id, type, sender_id, receiver_id, safe_key, commit_point, content}
+  Name string
+  ContactGate string
+  LegalGate string
+  RegistrationDate time.Time
 ```
 
+### Contact
+
+All contacts of a citizen
+
+Struct:
+
 ```
-message {
-    senderId
-    receiverId
-}
+  CitizenId uint64
+  Permission uint32
+```
 
-Error
+### Letter
 
-Sender ----> Taistra Gate ----> Taistra ---->  Receiver Gate ----> Receiver
+Communication method
+
+Struct:
+
+```
+  Id uint64
+  Code uint64
+  ForeignId uint64
+  CommitTime uint64
+  Message []byte
+```
+
+To Delivery
+
+```
+[Type][Code][SenderId][ReceiverId][CommitTime][LengthOfMesage][Message]
+```
+
+Request Letter & Response Letter
+
+```
+[Type][Code][SenderId][ReceiverId][CommitTime][LengthOfMesage][Message]
+   X     V      X          X            V            X            X
+
+V: same
+X: different
+```
+
+## Table
+
+### Citizen
+### Contact
+### HandleLaterLetter
+### ResponseLaterLetter
+### SentLetter
+### ReceivedLetter
+### ReferLetter
+
+```
 ```

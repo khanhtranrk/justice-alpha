@@ -1,8 +1,8 @@
-CREATE TABLE "relationships" (
-    "owner_key" VARCHAR(32) NOT NULL,
-    "guest_key" VARCHAR(32) NOT NULL,
-    "safe_key" VARCHAR(32) NOT NULL,
-    "gate" VARCHAR(255) NOT NULL
+CREATE TABLE citizens (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name VARCHAR(255) NOT NULL,
+    contact_gate VARCHAR(32) NOT NULL,
+    registration_date INTEGER NOT NULL
 );
 
-CREATE UNIQUE INDEX "relationships_index_on_owner_key" ON "relationships" ("owner_key");
+CREATE UNIQUE INDEX citizens_index_on_id ON citizens (id);
