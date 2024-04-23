@@ -4,11 +4,15 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+AmqpGate	external/justice/contact_gate.go	/^type AmqpGate struct {$/;"	t
+Broker	external/justice/broker.go	/^type Broker struct {$/;"	t
 Citizen	external/core/domain/citizen.go	/^type Citizen struct {$/;"	t
 CitizenRepository	external/adapter/storage/sqlite/repository/citizen.go	/^type CitizenRepository struct {$/;"	t
 CitizenRepository	external/core/port/citizen.go	/^type CitizenRepository interface {$/;"	t
 CitizenService	external/core/port/citizen.go	/^type CitizenService interface {$/;"	t
 CitizenService	external/core/service/citizen.go	/^type CitizenService struct {$/;"	t
+Close	external/justice/broker.go	/^func (b *Broker) Close() error {$/;"	f
+Config	external/justice/config.go	/^type Config struct {$/;"	t
 Contact	external/core/domain/contact.go	/^type Contact struct {$/;"	t
 ContactRepository	external/adapter/storage/sqlite/repository/contact.go	/^type ContactRepository struct {$/;"	t
 ContactRepository	external/core/port/contact.go	/^type ContactRepository interface {$/;"	t
@@ -45,12 +49,15 @@ ListAllContacts	external/adapter/storage/sqlite/repository/contact.go	/^func (cr
 ListAllContacts	external/core/service/contact.go	/^func (cs *ContactService) ListAllContacts() ([]*domain.Contact, error) {$/;"	f
 New	external/adapter/config/config.go	/^func New() (*DB, error) {$/;"	f
 New	external/adapter/storage/sqlite/db.go	/^func New(config *config.DB) (*sql.DB, error) {$/;"	f
+NewBroker	external/justice/broker.go	/^func NewBroker(cfg *Config) (*Broker, error) {$/;"	f
 NewCitizenRepository	external/adapter/storage/sqlite/repository/citizen.go	/^func NewCitizenRepository(db *sql.DB) *CitizenRepository {$/;"	f
 NewCitizenService	external/core/service/citizen.go	/^func NewCitizenService(rp port.CitizenRepository) *CitizenService {$/;"	f
+NewConfig	external/justice/config.go	/^func NewConfig() (*Config, error) {$/;"	f
 NewContactRepository	external/adapter/storage/sqlite/repository/contact.go	/^func NewContactRepository(db *sql.DB) *ContactRepository {$/;"	f
 NewContactService	external/core/service/contact.go	/^func NewContactService(rp port.ContactRepository) *ContactService {$/;"	f
 NewLetterRepository	external/adapter/storage/sqlite/repository/letter.go	/^func NewLetterRepository(db *sql.DB) *LetterRepository {$/;"	f
 NewLetterService	external/core/service/letter.go	/^func NewLetterService(lr port.LetterRepository) *LetterService {$/;"	f
+SendLetter	external/justice/contact_gate.go	/^func (g *AmqpGate) SendLetter(msg []byte) error {$/;"	f
 TestCreateHandleLaterLetterById	external/core/service/letter_test.go	/^func TestCreateHandleLaterLetterById(t *testing.T) {$/;"	f
 TestCreateReceivedLetterById	external/core/service/letter_test.go	/^func TestCreateReceivedLetterById(t *testing.T) {$/;"	f
 TestCreateResponseLaterLetterById	external/core/service/letter_test.go	/^func TestCreateResponseLaterLetterById(t *testing.T) {$/;"	f
@@ -90,6 +97,8 @@ contacts.permission	external/adapter/storage/sqlite/migrations/000002_create_con
 domain	external/core/domain/citizen.go	/^package domain$/;"	p
 domain	external/core/domain/contact.go	/^package domain$/;"	p
 domain	external/core/domain/letter.go	/^package domain$/;"	p
+justice	external/justice/broker.go	/^package justice$/;"	p
+justice	external/justice/config.go	/^package justice$/;"	p
 justice	external/justice/contact_gate.go	/^package justice$/;"	p
 letters	external/adapter/storage/sqlite/migrations/000003_create_letters_table.up.sql	/^CREATE TABLE letters ($/;"	t
 letters.code	external/adapter/storage/sqlite/migrations/000003_create_letters_table.up.sql	/^  code INTEGER NOT NULL,$/;"	F
